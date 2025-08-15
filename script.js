@@ -1,5 +1,15 @@
 function minDate(dates) {
   //write you code here
+	let res
+	let time = Date.now()   
+	for(let date of dates){ 
+		let curr = new Date(date.split('/').join('-')) 
+		if(time > parseInt(curr.getTime())){
+			res = date
+			time = curr.getTime()
+		}
+	}
+	return res
 }
 
 // Do not change the code
@@ -35,6 +45,6 @@ var dates = [
   "2023/03/28",
   "2023/03/29",
   "2023/03/30",
-];
+]; 
 
 alert(minDate(dates));
